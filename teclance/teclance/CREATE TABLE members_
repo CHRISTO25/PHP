@@ -1,0 +1,174 @@
+CREATE TABLE members_tb (
+member_id INT NOT NULL AUTO_INCREMENT,
+member_name VARCHAR(25),
+member_iia_no VARCHAR(100),
+member_coa_no VARCHAR(100),
+member_mail_id VARCHAR(100),
+member_organ_name VARCHAR(25),
+member_orgmail_id VARCHAR(100),
+member_place VARCHAR(25),
+member_gender CHAR(1),
+member_photo VARCHAR(254),
+member_phone_one VARCHAR(30),
+member_phone_two VARCHAR(30),
+member_certificate VARCHAR(254),
+member_status CHAR(1),
+member_password VARCHAR(40),
+//tmestamp
+
+PRIMARY KEY (member_id)
+
+);
+
+CREATE TABLE officeb_tb (
+officebairerrer_id INT NOT NULL AUTO_INCREMENT,
+member_id INT,
+event_coordinators_start VARCHAR(10),
+officeb_end VARCHAR(10),
+officeb_status CHAR(1),
+officeb_remarks TINYTEXT,
+officebar_visisbility CHAR(1),
+//timestamp
+
+
+PRIMARY KEY (officebairerrer_id),
+FOREIGN KEY (member_id) REFERENCES members_tb(member_id)
+
+
+);
+
+CREATE TABLE gallery_main_tb (
+gallery_main_id INT NOT NULL AUTO_INCREMENT,
+gallery_main_name VARCHAR(25),
+
+gallery_main_image VARCHAR(254),
+
+
+
+PRIMARY KEY (gallery_main_id)
+
+);
+
+CREATE TABLE gallery_sub_tb (
+gallery_sub_id INT NOT NULL AUTO_INCREMENT,
+gallery_main_id INT,
+gallery_sub_name VARCHAR(25),
+gallery_sub_image VARCHAR(254),
+
+
+
+PRIMARY KEY (gallery_sub_id),
+FOREIGN KEY (gallery_main_id) REFERENCES gallery_main_tb(gallery_main_id)
+
+);
+
+
+
+
+
+CREATE TABLE about_tb ( 
+about_id INT NOT NULL AUTO_INCREMENT,
+about_title VARCHAR(25),
+about_content MEDIUMTEXT,
+about_img VARCHAR(254),
+
+PRIMARY KEY(about_id)
+);
+
+CREATE TABLE contact_tb ( 
+contact_id INT NOT NULL AUTO_INCREMENT,
+contact_phone VARCHAR(25),
+contact_phone_opt VARCHAR(25),
+contact_email VARCHAR(50),
+contact_img VARCHAR(254),
+
+PRIMARY KEY(contact_id)
+);
+
+CREATE TABLE contact_form_tb ( 
+contact_form_id INT NOT NULL AUTO_INCREMENT,
+contact_form_name VARCHAR(25),
+contact_form_phone VARCHAR(25),
+contact_form_status CHAR(1),
+contact_form_email VARCHAR(50),
+contact_form_msg TINYTEXT,
+//timestamp
+
+PRIMARY KEY(contact_form_id)
+
+);
+
+CREATE TABLE events_tb (
+events_id INT NOT NULL AUTO_INCREMENT,
+events_title VARCHAR(25),
+events_date VARCHAR(25),
+events_venue VARCHAR(25),
+events_description TINYTEXT,
+events_visibility CHAR(1),
+events_image VARCHAR(254),
+events_amount INT,
+//timestamp
+event_reg_visibility CHAR(1),
+
+
+PRIMARY KEY (events_id)
+
+);
+
+CREATE TABLE event_gallery_main_tb (
+event_gallery_main_id INT NOT NULL AUTO_INCREMENT,
+events_id INT,
+event_gallery_main_name VARCHAR(25),
+events_gallery_main_image VARCHAR(254),
+
+
+
+
+PRIMARY KEY (event_gallery_main_id),
+FOREIGN KEY (events_id) REFERENCES events_tb(events_id)
+
+);
+
+CREATE TABLE event_joined_member_tb (
+event_joined_member_id INT NOT NULL AUTO_INCREMENT,
+member_id INT,
+events_id INT,
+event_joined_member_amount INT,
+event_joined_member_status CHAR(1),
+event_joined_member_orderid VARCHAR(254),
+event_joned_member_paymentid_VARCHAR(254),
+event_joined_member_signature VARCHAR(254),
+//timestamp 
+PRIMARY KEY (event_joined_member_id),
+FOREIGN KEY (member_id) REFERENCES members_tb(member_id),
+FOREIGN KEY (events_id) REFERENCES events_tb(events_id)
+
+);
+
+
+
+
+CREATE TABLE live_tb (
+live_id INT NOT NULL AUTO_INCREMENT,
+live_title VARCHAR(25),
+live_descriptions VARCHAR(254),
+live_thumbnail VARCHAR(254),
+live_url VARCHAR(254),
+//timestamp
+
+
+PRIMARY KEY (live_id)
+
+);
+
+CREATE TABLE event_cordinators_tb(
+event_cordinators_id INT NULL AUTO_INCREMENT,
+member_id INT,
+events_id INT
+//timestamp
+
+PRIMARY KEY (event_cordinators_id),
+FOREIGN KEY (member_id) REFERENCES members_tb(member_id),
+FOREIGN KEY (events_id) REFERENCES events_tb(events_id)
+
+);

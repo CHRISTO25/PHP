@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		
+*{
+  font-family: candara;
+  border: none;
+}
+.main{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  height: 1300px;
+  width: 100%;
+  background-color: #F3F6F9;
+}
+.main>div{
+  border-radius: 7px;
+  background-color: white;
+  overflow: hidden;
+  height: 90%;
+  width: 75%;
+}
+.cntnr{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+}
+.cntnr>div{
+  height: 50%;
+    width: 100%;
+}
+.top{
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  .top>div{
+    height: 100%;
+    width: 50%;
+  }
+  .img{
+    display: flex;
+    flex-direction: column;
+    width: 83%;
+    height: 100%;
+  }
+  /*.img1{
+    height: 80%;
+    width: 100%;
+  }
+  .img2{
+    height: 20%;
+    width: 100%; 
+  }*/
+  .sidedtls{
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+    
+  }
+  .sidedtls>div{
+    width: 100%;
+    padding: 1px;
+  }
+  .r1{
+    display: grid;
+    grid-template-columns: 80px auto 250px;
+    gap: 1%;
+  }
+.bottm{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.bottm>div{
+    height: 100%;
+    width: 100%;
+  }
+.btm{
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+  }
+  .btm>div{
+    width: 100%;
+    padding: 6px;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+  .r2{
+    display: grid;
+    grid-template-columns: 180px auto 550px;
+    gap: 1%;
+  }
+@media only screen and (min-width: 450px){
+  .main{height: 2000px;}
+  .main>div{height: 85%;}
+  .lfrm{gap: 45%;}
+  .rfrm{gap: 30%;}
+  .lefthead{margin-bottom: 10%;}
+  .righthead{margin-bottom: 10%;}
+}
+@media only screen and (min-width: 769px){
+  .main{height: 900px;}
+  .main>div{height: 85%;}
+  .lfrm{gap: 45%;}
+  .rfrm{gap: 30%;}
+  .lefthead{margin-bottom: 10%;}
+  .righthead{margin-bottom: 10%;}
+}
+@media only screen and (min-width: 1370px){
+  .main{
+    height: 695px;
+    width: 100%;
+    background-color: #F3F6F9;
+  }
+  .main>div{
+    height: 85%;
+    width: 50%;
+  }
+}
+
+	</style>
+	<title>Project Form</title>
+</head>
+	<body>
+		<div class="main">
+			<div>
+				<div class="cntnr">
+					<div>
+						<div class="top">
+							<div>
+								<div class="img">
+									<img class="img1" src="img/de.jpg">
+									<!--<img class="img2" src="signature.png">-->
+								</div>
+							</div>
+							<div>
+								<div class="sidedtls">
+									<h2>Student Stdenterson</h2>
+									<div class="r1">
+										<p>E-mail</p>
+										<p>:</p>
+										<p>studenterson@gmail.com</p>
+									</div>
+									<div class="r1">
+										<p>PH</p>
+										<p>:</p>
+										<p>7969654123</p>
+									</div>
+									<div class="r1">
+										<p>Cource</p>
+										<p>:</p>
+										<p>Python</p>
+									</div>
+									<div class="r1">
+										<p>Date of joining</p>
+										<p>:</p>
+										<p>12/10/2015</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="bottm">
+							<div class="btm">
+								<div class="r2">
+									<p>Address</p>
+									<p>:</p>
+									<p>Tisser Technologies, Excell Tover, Star J.N Kottayam pin:321456</p>
+								</div>
+								<div class="r2">
+									<p>Institution</p>
+									<p>:</p>
+									<p>Tisser Institute of Coding</p>
+								</div>
+								<div class="r2">
+									<p>Contact Person Name</p>
+									<p>:</p>
+									<p>John Abraham</p>
+								</div>
+								<div class="r2">
+									<p>Contact Person Number</p>
+									<p>:</p>
+									<p>3214569870</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
